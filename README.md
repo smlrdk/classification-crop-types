@@ -59,4 +59,5 @@
 Рисунок 2. Корреляция признаков
 
 #### Источники:
-Датасет и задача были взяты здесь: https://mlhub.earth/data/ref_agrifieldnet_competition_v1 
+* [Датасет](https://mlhub.earth/data/ref_agrifieldnet_competition_v1)
+* [Репозиторий проекта](https://github.com/smlrdk/classification-crop-types)
