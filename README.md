@@ -49,12 +49,12 @@
 * 16 - Берсем
 * 36 - Рис
 
-<img src="https://github.com/smlrdk/classification-crop-types/blob/main/class_distribution.png">
+<img src="https://github.com/smlrdk/classification-crop-types/blob/main/class_distribution.png" width="400">
 
 Рисунок 1. Распределение классов сельхоз культур в датасете
 
 
-<img src="https://github.com/smlrdk/classification-crop-types/blob/main/feature_correlation.png">
+<img src="https://github.com/smlrdk/classification-crop-types/blob/main/feature_correlation.png" width="800">
 
 Рисунок 2. Корреляция признаков
 
