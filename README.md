@@ -58,6 +58,16 @@
 
 Рисунок 2. Корреляция признаков
 
+
+<img src="https://github.com/smlrdk/classification-crop-types/blob/main/img_readme/deployment.png">
+
+Рисунок 3. Deployment diagram
+
+
+<img src="https://github.com/smlrdk/classification-crop-types/blob/main/img_readme/workflow.png">
+
+Рисунок 4. Workflow diagram
+
 #### Источники:
 * [Датасет](https://mlhub.earth/data/ref_agrifieldnet_competition_v1)
 * [Репозиторий проекта](https://github.com/smlrdk/classification-crop-types)
