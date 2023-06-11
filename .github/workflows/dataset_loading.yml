@@ -1,0 +1,22 @@
+name: DatasetLoadingWorkflow
+on: [workflow_dispatch]
+jobs:
+  LoadDataset:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v3
+      - name: install MLHub API
+        run: pip install radiant_mlhub
+      - name: install dataset
+        run: python src/dataset_loading.py
+      - name: unpack dataset archive
+        run: tar -xvzf ref_agrifieldnet_competition_v1.tar.gz
+      - name: delete archive
+        run: rm ref_agrifieldnet_competition_v1.tar.gz
+      - name: commit changes
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          default_author: github_actions
+      - name: install script requirements
+        run: pip install -r src/requirements.txt
