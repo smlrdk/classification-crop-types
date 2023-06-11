@@ -44,11 +44,11 @@ def name_model(name):
     if not os.path.exists('reports/' + str(name) + '_version_' + str(v) + '/model.sav') or v % 2 == 0:
         # настройка соответствующих моделей
         if name == 'KNN':
-            model = KNeighborsClassifier(n_neighbors=13)
+            model = KNeighborsClassifier(n_neighbors=6)
         elif name == 'RFC':
             # настройка гиперпараметров для количества деревьев
-            n_trees = 30
-            model = RandomForestClassifier(n_estimators = n_trees, random_state = 45, n_jobs = 15)
+            n_trees = 20
+            model = RandomForestClassifier(n_estimators = n_trees, random_state = 0, n_jobs = 3)
         train(name, model, X_train, y_train, X_test)
     else:
         if name == 'KNN':
