@@ -1,0 +1,202 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_labels_train_f6799",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00",
+        "label:properties": null,
+        "label:classes": [
+            {
+                "name": null,
+                "classes": [
+                    0,
+                    1,
+                    2
+                ]
+            }
+        ],
+        "label:description": "Crop Type Labels",
+        "label:type": "raster",
+        "label:tasks": [
+            "classification",
+            "segmentation"
+        ],
+        "label:methods": [
+            "manual"
+        ],
+        "proj:epsg": 32644,
+        "proj:transform": [
+            10.0,
+            0.0,
+            540960.0,
+            0.0,
+            -10.0,
+            3038720.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "proj:shape": [
+            256,
+            256
+        ]
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    81.44039959441369,
+                    27.44823432054081
+                ],
+                [
+                    81.44049143416089,
+                    27.471345321591496
+                ],
+                [
+                    81.41458074085605,
+                    27.4714248762804
+                ],
+                [
+                    81.4144943029398,
+                    27.448313797194984
+                ],
+                [
+                    81.44039959441369,
+                    27.44823432054081
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "ref_agrifieldnet_competition_v1_labels_train_f6799.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "source",
+            "href": "../../ref_agrifieldnet_competition_v1_source/ref_agrifieldnet_competition_v1_source_f6799/ref_agrifieldnet_competition_v1_source_f6799.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "raster_labels": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/train_labels/ref_agrifieldnet_competition_v1_labels_train_f6799.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data",
+                "labels"
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint16",
+                    "spatial_resolution": 10.0
+                }
+            ],
+            "classification:classes": [
+                {
+                    "name": "Wheat",
+                    "value": 1
+                },
+                {
+                    "name": "Mustac",
+                    "value": 2
+                },
+                {
+                    "name": "Lentil",
+                    "value": 3
+                },
+                {
+                    "name": "No crop/Fallow",
+                    "value": 4
+                },
+                {
+                    "name": "Green pea",
+                    "value": 5
+                },
+                {
+                    "name": "Sugarcane",
+                    "value": 6
+                },
+                {
+                    "name": "Garlic",
+                    "value": 8
+                },
+                {
+                    "name": "Maize",
+                    "value": 9
+                },
+                {
+                    "name": "Gram",
+                    "value": 13
+                },
+                {
+                    "name": "Coriander",
+                    "value": 14
+                },
+                {
+                    "name": "Potato",
+                    "value": 15
+                },
+                {
+                    "name": "Bersem",
+                    "value": 16
+                },
+                {
+                    "name": "Rice",
+                    "value": 36
+                }
+            ]
+        },
+        "field_ids": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/train_labels/ref_agrifieldnet_competition_v1_labels_train_f6799_field_ids.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data",
+                "labels"
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot"
+        }
+    },
+    "bbox": [
+        81.4144943029398,
+        27.44823432054081,
+        81.44049143416089,
+        27.4714248762804
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/label/v1.0.1/schema.json",
+        "https://stac-extensions.github.io/storage/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/classification/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+    ],
+    "collection": "ref_agrifieldnet_competition_v1_labels_train"
+}
