@@ -1,10 +1,10 @@
 name: MainWorkflow
-on:
-  workflow_run:
-    workflows: ["dataset_loading.yml"]
-    types:
-      - completed
-# on: [workflow_dispatch]
+# on:
+#   workflow_run:
+#     workflows: ["dataset_loading.yml"]
+#     types:
+#       - completed
+on: [workflow_dispatch]
 jobs:
 
 
