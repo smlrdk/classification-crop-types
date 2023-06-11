@@ -12,7 +12,7 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v3
       - name: install script requirements
-        run: pip install -r src/requirements.txt
+        run: pip install -r requirements.txt
       - name: preprocess_data
         run: python src/dataset_processing.py
       - name: commit changes
