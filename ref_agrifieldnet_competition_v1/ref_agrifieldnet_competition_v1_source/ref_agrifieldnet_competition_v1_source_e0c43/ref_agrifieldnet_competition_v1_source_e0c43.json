@@ -1,0 +1,495 @@
+{
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "id": "ref_agrifieldnet_competition_v1_source_e0c43",
+    "properties": {
+        "datetime": null,
+        "start_datetime": "2022-01-01T00:00:00+00:00",
+        "end_datetime": "2022-05-31T00:00:00+00:00",
+        "eo:bands": [
+            {
+                "name": "B01",
+                "common_name": "coastal",
+                "description": "Coastal Aerosol (0.400-0.450\u00b5m)",
+                "center_wavelength": 0.443
+            },
+            {
+                "name": "B02",
+                "common_name": "blue",
+                "description": "Blue (0.450-0.500\u00b5m)",
+                "center_wavelength": 0.492
+            },
+            {
+                "name": "B03",
+                "common_name": "green",
+                "description": "Green (0.500-0.600\u00b5m)",
+                "center_wavelength": 0.56
+            },
+            {
+                "name": "B04",
+                "common_name": "red",
+                "description": "Red (0.600-0.700\u00b5m)",
+                "center_wavelength": 0.665
+            },
+            {
+                "name": "B05",
+                "common_name": "rededge",
+                "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                "center_wavelength": 0.704
+            },
+            {
+                "name": "B06",
+                "common_name": "rededge",
+                "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                "center_wavelength": 0.741
+            },
+            {
+                "name": "B07",
+                "common_name": "rededge",
+                "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                "center_wavelength": 0.783
+            },
+            {
+                "name": "B08",
+                "common_name": "nir",
+                "description": "Near Infrared (0.750-1.000\u00b5m)",
+                "center_wavelength": 0.833
+            },
+            {
+                "name": "B8A",
+                "common_name": "nir08",
+                "description": "Narrow NIR (0.750-0.900\u00b5m)",
+                "center_wavelength": 0.865
+            },
+            {
+                "name": "B09",
+                "common_name": "nir09",
+                "description": "Water Vapour (0.850-1.050\u00b5m)",
+                "center_wavelength": 0.945
+            },
+            {
+                "name": "B11",
+                "common_name": "swir16",
+                "description": "Short Wavelength Infrared 1 (1.550-1.750\u00b5m)",
+                "center_wavelength": 1.614
+            },
+            {
+                "name": "B12",
+                "common_name": "swir22",
+                "description": "Short Wavelength Infrared 2 (2.100-2.300\u00b5m)",
+                "center_wavelength": 2.202
+            }
+        ],
+        "constellation": "sentinel-2",
+        "instruments": [
+            "msi"
+        ],
+        "mission": "sentinel-2",
+        "gsd": 10,
+        "platform": "Sentinel-2A",
+        "proj:epsg": 32644,
+        "proj:transform": [
+            10.0,
+            0.0,
+            579360.0,
+            0.0,
+            -10.0,
+            3031040.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "proj:shape": [
+            256,
+            256
+        ]
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    81.8284448945194,
+                    27.377136009191545
+                ],
+                [
+                    81.82861712886655,
+                    27.400245505237734
+                ],
+                [
+                    81.80272493695597,
+                    27.400396918663745
+                ],
+                [
+                    81.8025580830662,
+                    27.377287273844612
+                ],
+                [
+                    81.8284448945194,
+                    27.377136009191545
+                ]
+            ]
+        ]
+    },
+    "links": [
+        {
+            "rel": "root",
+            "href": "../../catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "../collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "ref_agrifieldnet_competition_v1_source_e0c43.json",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "B01": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B01_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B01",
+                    "common_name": "coastal",
+                    "description": "Coastal Aerosol (0.400-0.450\u00b5m)",
+                    "center_wavelength": 0.443
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "coastal"
+                }
+            ]
+        },
+        "B02": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B02_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B02",
+                    "common_name": "blue",
+                    "description": "Blue (0.450-0.500\u00b5m)",
+                    "center_wavelength": 0.492
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "blue"
+                }
+            ]
+        },
+        "B03": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B03_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B03",
+                    "common_name": "green",
+                    "description": "Green (0.500-0.600\u00b5m)",
+                    "center_wavelength": 0.56
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "green"
+                }
+            ]
+        },
+        "B04": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B04_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B04",
+                    "common_name": "red",
+                    "description": "Red (0.600-0.700\u00b5m)",
+                    "center_wavelength": 0.665
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "red"
+                }
+            ]
+        },
+        "B05": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B05_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B05",
+                    "common_name": "rededge",
+                    "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                    "center_wavelength": 0.704
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "rededge"
+                }
+            ]
+        },
+        "B06": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B06_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B06",
+                    "common_name": "rededge",
+                    "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                    "center_wavelength": 0.741
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "rededge"
+                }
+            ]
+        },
+        "B07": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B07_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B07",
+                    "common_name": "rededge",
+                    "description": "Vegetation Red Edge (0.700-0.790\u00b5m)",
+                    "center_wavelength": 0.783
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "rededge"
+                }
+            ]
+        },
+        "B08": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B08_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B08",
+                    "common_name": "nir",
+                    "description": "Near Infrared (0.750-1.000\u00b5m)",
+                    "center_wavelength": 0.833
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "nir"
+                }
+            ]
+        },
+        "B8A": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B8A_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B8A",
+                    "common_name": "nir08",
+                    "description": "Narrow NIR (0.750-0.900\u00b5m)",
+                    "center_wavelength": 0.865
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "nir08"
+                }
+            ]
+        },
+        "B09": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B09_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B09",
+                    "common_name": "nir09",
+                    "description": "Water Vapour (0.850-1.050\u00b5m)",
+                    "center_wavelength": 0.945
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "nir09"
+                }
+            ]
+        },
+        "B11": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B11_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B11",
+                    "common_name": "swir16",
+                    "description": "Short Wavelength Infrared 1 (1.550-1.750\u00b5m)",
+                    "center_wavelength": 1.614
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "swir16"
+                }
+            ]
+        },
+        "B12": {
+            "href": "https://radiantearth.blob.core.windows.net/mlhub/ref_agrifieldnet_competition_v1/source/ref_agrifieldnet_competition_v1_source_e0c43/ref_agrifieldnet_competition_v1_source_e0c43_B12_10m.tif",
+            "type": "image/tiff; application=geotiff",
+            "roles": [
+                "data"
+            ],
+            "eo:bands": [
+                {
+                    "name": "B12",
+                    "common_name": "swir22",
+                    "description": "Short Wavelength Infrared 2 (2.100-2.300\u00b5m)",
+                    "center_wavelength": 2.202
+                }
+            ],
+            "storage:platform": "AZURE",
+            "storage:region": "westeurope",
+            "storage:requester_pays": false,
+            "storage:tier": "hot",
+            "raster:bands": [
+                {
+                    "nodata": "nan",
+                    "data_type": "uint8",
+                    "spatial_resolution": 10.0,
+                    "name": "swir22"
+                }
+            ]
+        }
+    },
+    "bbox": [
+        81.8025580830662,
+        27.377136009191545,
+        81.82861712886655,
+        27.400396918663745
+    ],
+    "stac_extensions": [
+        "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/storage/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+    ],
+    "collection": "ref_agrifieldnet_competition_v1_source"
+}
