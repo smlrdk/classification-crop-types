@@ -9,6 +9,8 @@ jobs:
       - name: install MLHub API
         run: pip install radiant_mlhub
       - name: install dataset
+        env:
+          API_KEY: ${{secrets.API_KEY}}
         run: python src/dataset_loading.py
       - name: unpack dataset archive
         run: tar -xvzf ref_agrifieldnet_competition_v1.tar.gz
