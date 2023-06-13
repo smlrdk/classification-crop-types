@@ -26,7 +26,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsRFC
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -48,7 +48,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsRFC
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -70,7 +70,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsRFC
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -93,7 +93,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsKNN
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -116,7 +116,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsKNN
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -139,7 +139,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsKNN
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
@@ -159,10 +159,15 @@ jobs:
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3
-      - name: download artifacts
+      - name: download artifactsRFC
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
+          name: artifactsRFC
+          path: reports/
+      - name: download artifactsKNN
+        uses: actions/download-artifact@v3
+        with:
+          name: artifactsKNN
           path: reports/
       - name: install script requirements
         run: pip install -r requirements.txt
