@@ -62,4 +62,4 @@ def name_model(name):
 
 
 if __name__ == "__main__":
-    name_model('KNN')
+    name_model(sys.argv[1])
