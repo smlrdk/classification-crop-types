@@ -99,4 +99,4 @@ def evaluation(name_model):
 
 
 if __name__ == "__main__":
-    evaluation('RFC')
+    evaluation(sys.argv[1])
