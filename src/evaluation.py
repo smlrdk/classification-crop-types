@@ -48,18 +48,6 @@ def metrics_df(name, y_true, y_pred, version, i):
     else:
         df = pd.DataFrame(columns=['Model', 'Accuracy', 'Macro avg Precision', 'Macro avg recall', 'Macro avg f1-score', 
                                 'Weighted avg Precision', 'Weighted avg recall', 'Weighted avg f1-score'])
-    print(y_true.shape)
-    print(y_pred.shape) 
-    #     if i == -1:
-    #     y_true = y_true.drop(index=y_true.index[i])
-    # elif i == 555:
-    #     y_pred = np.delete(y_pred, slice(i,None))
-    #     y_true = y_true.drop(index=y_true.index[-1])
-    # if i == 555:
-    #     y_pred = np.delete(y_pred, slice(i,None))
-    #     y_true = y_true.drop(index=y_true.index[-1])
-    # el
-    #y_pred = np.delete(y_pred, slice(i, None))
     y_true = y_true.drop(index = y_true.index[i])
 
     accuracy = accuracy_score(y_true, y_pred)
@@ -74,17 +62,6 @@ def metrics_df(name, y_true, y_pred, version, i):
                             recall_weighted, fscore_weighted], index=parameters).T
     df = pd.concat((df, new_row))
     df.to_excel('reports/metrics.xlsx', index=False)
-    print('yes')
-
-
-# def get_confMatrix(name_model, y_pred, y_true, version, i):
-#     if i == -1:
-#         y_true = y_true.drop(index=y_true.index[i])
-#     elif i == 555:
-#         y_pred = np.delete(y_pred, slice(i,None))
-#         y_true = y_true.drop(index=y_true.index[-1])
-#     cm = ConfusionMatrixDisplay.from_predictions(y_true, y_pred)
-#     return cm
 
 # получение вероятностей принадлежности полей к каждому классу сельхозугодья
 def get_submission(name, model, test_data_grouped, version):
@@ -112,8 +89,7 @@ def evaluation(name_model):
     model_retrain = get_model(version_retrain, name_model)
     y_pred_crop = get_y_pred(version_train, name_model)
     y_re_pred_crop = get_y_pred(version_retrain, name_model)
-    index_elements1 = -1
-    # index_elements2 = -1 и 555 
+    index_elements1 = 1
     get_submission(name_model, model_train, test_data, version_train)
     get_submission(name_model, model_retrain, test_data, version_retrain)
     metrics_df(name_model, y_test, y_pred_crop, version_train, index_elements1)
@@ -123,4 +99,4 @@ def evaluation(name_model):
 
 
 if __name__ == "__main__":
-    evaluation(sys.argv[1])
+    evaluation('RFC')

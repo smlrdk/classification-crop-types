@@ -166,4 +166,4 @@ jobs:
         run: |
           git pull origin HEAD:${{ github.ref }}
       - name: deploy 
-        run: python .\app\start_docker.py
+        run: docker run -p 5000:5000 crop-types
