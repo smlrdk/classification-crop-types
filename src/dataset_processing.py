@@ -106,19 +106,6 @@ train_df = pd.merge(train_data_grouped, field_crop_pair, on='field_id' )
 
 if not os.path.exists('reports'):
     os.makedirs('reports')
-# # 5539
-# train_ds = train_df.iloc[:4985,:]
-# fine_tuning_ds = train_df.iloc[4985:5539,:]
-# X_train, X_test, y_train, y_test = train_test_split(train_ds.drop(['field_id', 'crop_id'], axis=1), train_ds['crop_id'], test_size=0.3, random_state=42)
-# with open('reports/vars_for_train.pickle', 'wb') as f:
-#     pickle.dump((X_train, X_test, y_train, y_test), f)
-# X_retrain, X_retest, y_retrain, y_retest = train_test_split(fine_tuning_ds.drop(['field_id', 'crop_id'], axis=1), fine_tuning_ds['crop_id'], test_size=0.3, random_state=42)
-# with open('reports/vars_for_fine_tuning.pickle', 'wb') as f:
-#     pickle.dump((X_retrain, X_retest, y_retrain, y_retest), f)
-# print(str(X_retrain))
-# print(str(X_retest))
-# print(str(y_retrain))
-# print(str(y_retest))
 
 train_df.to_csv('reports/prepared_train_data.csv', index=False)
 test_data_grouped.to_csv('reports/prepared_test_data.csv', index=False)
@@ -128,8 +115,7 @@ X_train, X_test, y_train, y_test = train_test_split(train_df.drop(['field_id', '
 with open('reports/vars_for_train.pickle', 'wb') as f:
     pickle.dump((X_train, X_test, y_train, y_test), f)
 
-# # выделение данных для дообучения модели
-# X_retrain, X_retest, y_retrain, y_retest = train_test_split(train_df.drop(['field_id', 'crop_id'], axis=1), train_df['crop_id'], train_size=0.1, random_state=42) 
+# выделение данных для дообучения модели из обучающей выборки
 X_train, X_retrain, y_train, y_retrain = train_test_split(X_train, y_train, train_size = 0.9, random_state=42)
 with open('reports/vars_for_fine_tuning.pickle', 'wb') as f:
     pickle.dump((X_train, X_retrain, y_train, y_retrain), f)

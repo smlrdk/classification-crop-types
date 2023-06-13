@@ -11,6 +11,7 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import ConfusionMatrixDisplay
 
+
 # получение номеров версий моделей после обучения и дообучения соответственно
 def get_version(name):
     with open("reports/version_" + str(name) + ".txt") as version_file:
@@ -19,6 +20,7 @@ def get_version(name):
         version_retrain_model = int(version_file.readline()) 
     return version_train_model, version_retrain_model
 
+
 # получение подготовленных тестовых данных для оценки из файла "prepared_test_data", 
 # который мы получили на этапе dataset_processing
 def get_prepared_test_data():
@@ -26,11 +28,13 @@ def get_prepared_test_data():
     data.to_string()
     return data
 
+
 # получение обученной и дообученной моделей соответственно
 def get_model(version, name):
     filename = 'reports/' + str(name) + '_version_' + str(version) + '/model.sav'
     loaded_model = joblib.load(filename)
     return loaded_model
+
 
 # получение предсказаний после прогона тестовых данных через модели
 def get_y_pred(version, name):
@@ -49,7 +53,6 @@ def metrics_df(name, y_true, y_pred, version, i):
         df = pd.DataFrame(columns=['Model', 'Accuracy', 'Macro avg Precision', 'Macro avg recall', 'Macro avg f1-score', 
                                 'Weighted avg Precision', 'Weighted avg recall', 'Weighted avg f1-score'])
     y_true = y_true.drop(index = y_true.index[i])
-
     accuracy = accuracy_score(y_true, y_pred)
     precision_macro = precision_score(y_true, y_pred, average = 'macro')
     precision_weighted = precision_score(y_true, y_pred, average = 'weighted')
@@ -62,6 +65,7 @@ def metrics_df(name, y_true, y_pred, version, i):
                             recall_weighted, fscore_weighted], index=parameters).T
     df = pd.concat((df, new_row))
     df.to_excel('reports/metrics.xlsx', index=False)
+
 
 # получение вероятностей принадлежности полей к каждому классу сельхозугодья
 def get_submission(name, model, test_data_grouped, version):
@@ -78,20 +82,28 @@ def get_submission(name, model, test_data_grouped, version):
     test_df.to_csv('reports/' + str(name) + '_version_' + str(version) + '/submission.csv', index=False)
 
 
+# подсчет метрик
 def evaluation(name_model):
+    # извлечение переменных с данными по выборкам (обучающей, дообучающей)
     with open('reports/vars_for_train.pickle', 'rb') as f:
         X_train, X_test, y_train, y_test = pickle.load(f)
     with open('reports/vars_for_fine_tuning.pickle', 'rb') as f:
         X_retrain, X_retest, y_retrain, y_retest = pickle.load(f)
+    # получение версий моделей (после обучения и дообучения соответственно)
     version_train, version_retrain = get_version(name_model)
+    # получение тестовых данных из файла, который мы образовали на этапе dataset_processing
     test_data = get_prepared_test_data()
+    # получение обученной и доообученной моделей соответственно
     model_train = get_model(version_train, name_model)
     model_retrain = get_model(version_retrain, name_model)
+    # предсказаний после прогона тестовых данных через модели
     y_pred_crop = get_y_pred(version_train, name_model)
     y_re_pred_crop = get_y_pred(version_retrain, name_model)
     index_elements1 = 1
+    # вычисление вероятностей принадлежности полей к каждому классу сельхозугодья
     get_submission(name_model, model_train, test_data, version_train)
     get_submission(name_model, model_retrain, test_data, version_retrain)
+    # подсчет метрик
     metrics_df(name_model, y_test, y_pred_crop, version_train, index_elements1)
     metrics_df(name_model, y_retest, y_re_pred_crop, version_retrain, index_elements1)
     # cm = get_confMatrix(name_model, y_pred_crop, d.y_test, version_train, index_elements1)
