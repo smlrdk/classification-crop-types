@@ -8,19 +8,18 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 def get_version(name):
-    if not os.path.exists("reports/version_" + str(name) + ".txt"):
-        os.makedirs("reports/version_" + str(name) + ".txt")
-        with open("reports/version_" + str(name) + ".txt", "w") as version_file:
+    if not os.path.isfile('reports/version_' + str(name) + '.txt'):
+        with open('reports/version_' + str(name) + '.txt', 'w') as version_file:
             print(0, file=version_file)
-    with open("reports/version_" + str(name) + ".txt") as version_file:
+    with open('reports/version_' + str(name) + '.txt') as version_file:
         version = int(version_file.readline())
     return version
 
 
 def update_version(name):
-    with open("reports/version_" + str(name) + ".txt") as version_file:
+    with open('reports/version_' + str(name) + '.txt') as version_file:
             version = int(version_file.readline()) + 1
-    with open("reports/version_" + str(name) + ".txt", "w") as file:
+    with open('reports/version_' + str(name) + '.txt', 'w') as file:
         print(version, file=file)
     return version
 
@@ -30,7 +29,7 @@ def train(name, model, X_train, y_train, X_test):
     y_pred = model.predict(X_test)
     v = update_version(name)
     # создание директории для данных о модели
-    os.mkdir("reports/" + str(name) + "_version_" + str(v))
+    os.mkdir('reports/' + str(name) + '_version_' + str(v))
     filename = 'reports/' + str(name) + '_version_' + str(v) + '/model.sav'
     joblib.dump(model, open(filename, 'wb'))
     # сохранение данных
@@ -63,4 +62,4 @@ def name_model(name):
 
 
 if __name__ == "__main__":
-    name_model(sys.argv[1])
+    name_model('KNN')
