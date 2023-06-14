@@ -30,5 +30,5 @@ if __name__ == "__main__":
     if not os.path.exists('reports'):
         os.makedirs('reports')
 
-    dataset.download(output_dir='reports/',collection_filter=my_filter)
+    dataset.download(output_dir='reports/'+ main,collection_filter=my_filter)
 
