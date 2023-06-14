@@ -105,8 +105,11 @@ test_data_grouped.field_id = [str(int(i)) for i in test_data_grouped.field_id.va
 # объединение таблиц train_data и field_crop_pair
 train_df = pd.merge(train_data_grouped, field_crop_pair, on='field_id' )
 
-if os.path.exists('ref_agrifieldnet_competition_v1'):
-    shutil.copytree('ref_agrifieldnet_competition_v1', 'reports/')
+if not os.path.exists('reports'):
+    os.makedirs('reports')
+
+# if os.path.exists('ref_agrifieldnet_competition_v1'):
+#     shutil.copytree('ref_agrifieldnet_competition_v1', 'reports/')
 
 train_df.to_csv('reports/prepared_train_data.csv', index=False)
 test_data_grouped.to_csv('reports/prepared_test_data.csv', index=False)
