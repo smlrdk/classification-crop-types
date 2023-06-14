@@ -1,6 +1,7 @@
 import os
 import json
 import pickle
+import shutil
 import rasterio
 import numpy as np
 import pandas as pd
@@ -119,3 +120,6 @@ with open('reports/vars_for_train.pickle', 'wb') as f:
 X_train, X_retrain, y_train, y_retrain = train_test_split(X_train, y_train, train_size = 0.9, random_state=42)
 with open('reports/vars_for_fine_tuning.pickle', 'wb') as f:
     pickle.dump((X_train, X_retrain, y_train, y_retrain), f)
+
+if os.path.exists('ref_agrifieldnet_competition_v1'):
+    shutil.copytree('ref_agrifieldnet_competition_v1', 'reports/')

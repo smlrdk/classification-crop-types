@@ -27,8 +27,5 @@ if __name__ == "__main__":
         ref_agrifieldnet_competition_v1_source=selected_bands 
     )
 
-    if not os.path.exists('reports'):
-        os.makedirs('reports')
-
-    dataset.download(output_dir='reports/'+ main,collection_filter=my_filter)
+    dataset.download(collection_filter=my_filter)
 
