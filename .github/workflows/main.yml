@@ -190,8 +190,9 @@ jobs:
     runs-on: self-hosted
     needs: [SelectModel]
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v3
+      - name: Pull changes
+        run: |
+          git pull origin HEAD:${{ github.ref }}
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
