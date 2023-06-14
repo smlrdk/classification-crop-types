@@ -17,7 +17,6 @@ test_label_collection = f'{main}_labels_test'
 if __name__ == "__main__":
 
     # Загрузка датасета через MLHUB_API_KEY
-    os.environ['MLHUB_API_KEY'] = '2bfc53ed354461ebe6164448730a063f40ba6e1d744b8ef7a81b26cde1418520'
     os.environ['MLHUB_API_KEY'] = os.getenv('API_KEY')
     dataset = Dataset.fetch(main) # - интерфейс для скачивания набора данных с названием датасета
 
@@ -28,5 +27,8 @@ if __name__ == "__main__":
         ref_agrifieldnet_competition_v1_source=selected_bands 
     )
 
-    dataset.download(collection_filter=my_filter)
+    if not os.path.exists('reports'):
+        os.makedirs('reports')
+
+    dataset.download(output_dir='reports/',collection_filter=my_filter)
 
