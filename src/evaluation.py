@@ -44,7 +44,7 @@ def get_y_pred(version, name):
 
 
 # подсчет метрик, внесение их в таблицу
-def metrics_df(name, y_true, y_pred, version, i):
+def metrics_df(name, y_true, y_pred, version):
     parameters = ['Model', 'Accuracy', 'Macro avg Precision', 'Macro avg recall', 'Macro avg f1-score', 
                                 'Weighted avg Precision', 'Weighted avg recall', 'Weighted avg f1-score']
     if os.path.isfile('reports/metrics.xlsx'):
@@ -52,7 +52,7 @@ def metrics_df(name, y_true, y_pred, version, i):
     else:
         df = pd.DataFrame(columns=['Model', 'Accuracy', 'Macro avg Precision', 'Macro avg recall', 'Macro avg f1-score', 
                                 'Weighted avg Precision', 'Weighted avg recall', 'Weighted avg f1-score'])
-    y_true = y_true.drop(index = y_true.index[i])
+    y_true = y_true.drop(index = y_true.index[1])
     accuracy = accuracy_score(y_true, y_pred)
     precision_macro = precision_score(y_true, y_pred, average = 'macro')
     precision_weighted = precision_score(y_true, y_pred, average = 'weighted')
@@ -99,13 +99,12 @@ def evaluation(name_model):
     # предсказаний после прогона тестовых данных через модели
     y_pred_crop = get_y_pred(version_train, name_model)
     y_re_pred_crop = get_y_pred(version_retrain, name_model)
-    index_elements1 = 1
     # вычисление вероятностей принадлежности полей к каждому классу сельхозугодья
     get_submission(name_model, model_train, test_data, version_train)
     get_submission(name_model, model_retrain, test_data, version_retrain)
     # подсчет метрик
-    metrics_df(name_model, y_test, y_pred_crop, version_train, index_elements1)
-    metrics_df(name_model, y_retest, y_re_pred_crop, version_retrain, index_elements1)
+    metrics_df(name_model, y_test, y_pred_crop, version_train)
+    metrics_df(name_model, y_retest, y_re_pred_crop, version_retrain)
     # cm = get_confMatrix(name_model, y_pred_crop, d.y_test, version_train, index_elements1)
     # cm = get_confMatrix(name_model, y_re_pred_crop, d.y_retest, version_retrain, index_elements2)
 
